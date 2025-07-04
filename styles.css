@@ -90,4 +90,26 @@ body {
 .btn:hover {
   background: #d81b0e;
   transform: scale(1.05);
+}
+.header-comiccon {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;
+  background: transparent;
+  z-index: 100;
+  pointer-events: none;
+  margin-bottom: 0;
+}
+.header-comiccon img {
+  max-width: 100px;
+  width: 40vw;
+  opacity: 0.6;
+  display: block;
+  margin: 6px auto 0 auto;
+  pointer-events: auto;
 } 
