@@ -21,13 +21,17 @@
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var video = document.querySelector('.video-bg video');
-      function playVideoOnUserGesture() {
-        if (video.paused) {
+      function tryPlay() {
+        if (video.readyState >= 2 && video.paused) {
           video.play().catch(()=>{});
         }
+      }
+      function playVideoOnUserGesture() {
+        tryPlay();
         document.removeEventListener('touchstart', playVideoOnUserGesture);
         document.removeEventListener('click', playVideoOnUserGesture);
       }
+      video.addEventListener('canplay', tryPlay);
       document.addEventListener('touchstart', playVideoOnUserGesture);
       document.addEventListener('click', playVideoOnUserGesture);
     });
