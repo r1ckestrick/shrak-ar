@@ -18,5 +18,19 @@
     <div class="instruccion">¡Posicionate frente a la jaula y presiona comenzar!</div>
     <a href="https://elealcubo.8thwall.app/animalespeligrosos/" class="btn">COMENZAR</a>
   </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var video = document.querySelector('.video-bg video');
+      function playVideoOnUserGesture() {
+        if (video.paused) {
+          video.play().catch(()=>{});
+        }
+        document.removeEventListener('touchstart', playVideoOnUserGesture);
+        document.removeEventListener('click', playVideoOnUserGesture);
+      }
+      document.addEventListener('touchstart', playVideoOnUserGesture);
+      document.addEventListener('click', playVideoOnUserGesture);
+    });
+  </script>
 </body>
 </html> 
